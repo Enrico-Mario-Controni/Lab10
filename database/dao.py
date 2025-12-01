@@ -57,7 +57,7 @@ class DAO:
         cnx = DBConnect.get_connection()
         cursor = cnx.cursor(dictionary=True)
 
-        hub_dict = DAO.nome()
+        nomi = DAO.nome()
 
         tratte={}
         query= """select *
@@ -75,8 +75,8 @@ class DAO:
                 data_consegna= row['data_consegna'],
                 valore_merce= row['valore_merce'])
 
-            nome_u = hub_dict.get(spedizione.id_hub_origine, str(spedizione.id_hub_origine))
-            nome_v = hub_dict.get(spedizione.id_hub_destinazione, str(spedizione.id_hub_destinazione))
+            nome_u = nomi.get(spedizione.id_hub_origine, str(spedizione.id_hub_origine))
+            nome_v = nomi.get(spedizione.id_hub_destinazione, str(spedizione.id_hub_destinazione))
 
             tratta= tuple(sorted((nome_u,nome_v)))
 
