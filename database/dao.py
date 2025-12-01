@@ -34,7 +34,7 @@ class DAO:
                 latitudine=row['latitudine'],
                 longitudine=row['longitudine'])
 
-            nodi.append(hub.id)
+            nodi.append(hub.nome)
 
         return nodi
 

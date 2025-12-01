@@ -14,8 +14,7 @@ class Model:
         """
         # TODO
         nodes= DAO.num_nodes()
-        for el in nodes:
-            self.G.add_node(el)
+        self.G.add_nodes_from(nodes)
 
 
         edges= DAO.num_edges()
